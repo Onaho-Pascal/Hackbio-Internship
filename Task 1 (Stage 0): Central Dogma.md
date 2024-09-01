@@ -3,7 +3,7 @@
 “What does the synthesis of proteins in the body and the baking of bread have in common?” is a question one might find strange.
 However, this question is not any more strange than the commonality in both processes—the order in which bread and proteins are made.
 The synthesis of protein much like the baking of bread is unidirectional (in one direction, from one end to the other).
-A baker does not bake a bread before creating his recipe, just as the protein is not translated from the RNA before the RNA is transcribed from the DNA.
+A baker does not bake bread before creating his recipe, just as the protein is not translated from the RNA before the RNA is transcribed from the DNA.
 This order of processes observed at the molecular level of nucleic acids and protein is considered the Central Dogma of Molecular Biology; a phenomenon first articulated by Francis Crick in 1958 (Ostrander, n.d.).
 ## Understanding Genetic Information Flow
 The Central Dogma of Molecular Biology describes the process by which genetic information flows from the DNA to RNA, and then to Proteins. 
