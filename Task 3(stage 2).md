@@ -1,4 +1,6 @@
 
+# Solution to the Task
+## Data Analysis (Generation of Heatmaps)
 first step is to set the working directory. That is, set the path from which R would read the desired file.  
 Then load the data into R and view the different sessions (Head, structure, dim, and check for missing values).
 ```
