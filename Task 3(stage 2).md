@@ -258,3 +258,4 @@ heatmap.2(as.matrix(zscoreglio_data),
           main = "Heatmap of top 500+ differentially expressed genes in Glioblastoma",
           cexRow = 0.9, cexCol = 0.7, margins = c(11,10))
 ```
+![Rplot](https://github.com/user-attachments/assets/e61ce50a-b2dc-4ef6-8d16-f51ee07aa649)
