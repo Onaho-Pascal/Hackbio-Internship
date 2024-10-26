@@ -320,3 +320,71 @@ print(conf_matrix1)
 set.seed(123) 
 importance <- varImp(knn_model, scale = FALSE)
 print(importance)
+
+
+
+
+# load libraries ####
+library("TCGAbiolinks")
+library("SummarizedExperiment")
+library(dplyr)
+
+# download the data ####
+tcga_coad <- GDCquery(project = 'TCGA-COAD',
+                      data.category = 'Transcriptome Profiling',
+                      experimental.strategy = 'RNA-Seq',
+                      data.type = 'Gene Expression Quantification',
+                      sample.type = "Primary Tumor")
+GDCdownload(tcga_coad) 
+coad_data <- GDCprepare(tcga_coad) 
+# get the raw counts
+coad_rawdata <- assays(coad_data) 
+dim(coad_rawdata$unstranded) # 481 samples
+coad_rawdata <- coad_rawdata$unstranded 
+table(is.na(coad_rawdata)) # no NAs
+
+# get the metadata
+metadata <- data.frame("barcode" = coad_data$barcode,
+                       "Race" = coad_data$race,
+                       "Gender" = coad_data$gender,
+                       "days_to_last_follow_up" = coad_data$days_to_last_follow_up,
+                       "Age (Years)" = coad_data$age_at_index,
+                       "days_to_death" = coad_data$days_to_death,
+                       "Overall Survival Status" = coad_data$vital_status,
+                       "Prior Malignancy" = coad_data$prior_malignancy,
+                       "prior_treatment" = coad_data$prior_treatment,
+                       "tumor_stage" = coad_data$ajcc_pathologic_stage,
+                       "Primary Site" = coad_data$site_of_resection_or_biopsy)
+
+View(metadata)
+
+rownames(metadata)
+
+rownames(metadata) <- metadata$barcode #changed the rownames from numerical "1, 2, 3, 4, 5...." to the Barcode
+
+metadata$barcode <- NULL #to remove the row name duplicate
+
+rownames(metadata)
+
+
+# filter the samples not annotated for sex and the samples that received prior treatment
+metadata <- metadata %>% 
+  filter(!is.na(metadata$Gender) &
+           metadata$prior_treatment != "Yes" &
+           !is.na(metadata$Overall.Survival..Months) &
+           !is.na(metadata$Overall.Survival.Status))
+dim(metadata) # 475 samples
+table(metadata$Gender) # 225 female, 250 male
+
+# match the samples in the raw counts object
+coad_rawdata <- coad_rawdata[, colnames(coad_rawdata) %in% metadata$barcode]
+dim(coad_rawdata) # 475 samples
+
+# normalize and filter the raw counts
+norm_data <- TCGAanalyze_Normalization(tabDF = coad_rawdata, geneInfo = geneInfoHT, method = "geneLength")
+
+filt_data <- TCGAanalyze_Filtering(tabDF = norm_data,
+                                   method = "quantile",
+                                   qnt.cut = 0.25)
+coad <- filt_data
+dim(coad) # filtered out 38676 genes 
