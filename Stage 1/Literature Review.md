@@ -1,7 +1,7 @@
 # Literature Review of Machine Learning for Lung Cancer Diagnosis, Treatment, and Prognosis
 **Research Paper Authors**: Yawei Li, Xin Wu, Ping Yang, Guoqian Jiang, and Yuan Luo.  
 **Year**: 2022  
-**Contributors to the Literature Review**: Princess Jimmy, Onaho Pascal, Abdulrahman Walid Elbagoury, and Idahosa Clinton
+**Contributors to the Literature Review**: Onaho Pascal, Princess Jimmy, Abdulrahman Walid Elbagoury, and Idahosa Clinton
 ## Scope and Relevance of the Work
   Globally, lung cancer management has remained a major concern due to the rapid heterogeneity of diagnosis and therapy attributed to the enormous amount of data produced by advanced imaging and sequencing technologies. This paper seeks to tackle this challenge by laying emphasis on the significance and utilization of machine learning (ML) in managing, integrating, and analyzing these big datasets that have become a setback in oncology. It primarily indicates the areas where ML can be applied in lung cancer, including early detection, diagnostics, prognostics, and treatment (immunotherapy).   
   
