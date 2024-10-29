@@ -1,5 +1,5 @@
 # Integrating Machine Learning and Differential Expression Analysis for Biomarker Discovery in Glioma 🧬💻🤖
-Authors: Manal Agdada (@Manal), Ojiaku Confidence Chisom (@Areta), Rahma Nabil Sallam (@rahmanabil2002), Pascal Onaho (@PascalOnaho), Hagar Haitham Elazab (@HBONH33), Mercy Francis (@Mercylee), Ariyo Adesokan (@Adesokan_ariyo1)
+Authors: Pascal Onaho (@PascalOnaho), Manal Agdada (@Manal), Ojiaku Confidence Chisom (@Areta), Rahma Nabil Sallam (@rahmanabil2002), Hagar Haitham Elazab (@HBONH33), Mercy Francis (@Mercylee), Ariyo Adesokan (@Adesokan_ariyo1)
 
 R script: 
 
